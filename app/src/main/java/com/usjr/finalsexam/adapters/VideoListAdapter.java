@@ -80,11 +80,14 @@ public class VideoListAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        ImageView imgThumbnail;
-        TextView  tvTitle;
+
+         TextView  tvTitle;
+         public ImageView imgThumbnail;
 
         ViewHolder(View itemView) {
+            imgThumbnail = (ImageView)itemView.findViewById(R.id.imgThumbnail);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+
         }
     }
 }

@@ -52,6 +52,7 @@ public class VideoTable {
 
     private static Video createVideoFromCursor(Cursor cursor) {
         // TODO: Implement this method
+        createVideoFromCursor(cursor);
         return null;
     }
 
@@ -124,6 +125,15 @@ public class VideoTable {
 
         try {
             // TODO: Implement retrieval of all video items from the database
+            db = DbHandler.getInstance(context).getReadableDatabase();
+            cursor = db.rawQuery(SELECT_QUERY, null);
+
+            cursor.moveToFirst();
+            while(cursor.isAfterLast() == false) {
+                    cursor.getColumnIndex(SELECT_QUERY);
+                cursor.moveToNext();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
